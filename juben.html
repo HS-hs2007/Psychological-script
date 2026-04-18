@@ -1,57 +1,354 @@
-<!DOCTYPE html><html><head>
-      <title>juben</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.css">
-      
-      
-      
-      
-      
-      <style>
-      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>拖延症心理剧 · 飞轮效应</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      </style>
-      <script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function () {
-    // your code here
-  });
-</script>
-    </head>
-    <body for="html-export">
-      <div class="crossnote markdown-preview  ">
-      
-<h1 id="第三组心理剧介绍">第三组心理剧介绍 </h1>
-<h2 id="剧本简介">剧本简介 </h2>
-<p>小明同学不想完成作业，喜欢把大把时间投入到娱乐中，所以在写作业的过程中出现了很多拖延的行为。作业等到最后一天写，游戏一直在玩，输了要一雪前耻，赢了要乘胜追击；写作业没头绪就开始做其他的事情，完全没有投入其中；在经历了惨重的教训后，他终于决定改变对必须要完成的事情的态度，不再拖沓。</p>
-<h2 id="剧本分析">剧本分析 </h2>
-<p>剧本触及了拖延症研究的几个核心发现：</p>
-<ol>
-<li>拖延 ≠ 懒惰<br>
-这是最关键的认知纠偏。心理学研究表明，拖延的本质是情绪调节失败——我们拖延不是因为不想做，而是因为做这件事会触发焦虑、恐惧、自我怀疑等负面情绪，拖延是逃避这些情绪的短期策略。剧本通过A“一坐到书桌前就难受”的台词，精准传达了这一点。<br>
-<img src="https://pic3.zhimg.com/v2-acfb490ff9705833196c3bab3d9b83bc_720w.jpg?source=172ae18b" alt="tupian"></li>
-<li>完美主义与拖延的共生关系<br>
-“等状态好了一次性搞定”是拖延者最常见的自我欺骗。研究显示，完美主义者的拖延率显著更高，因为完美主义设定了一个不可能的标准，而“不开始”是唯一不会失败的方式。<br>
-<img src="data:image/webp;base64,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" alt="tu"></li>
-<li>时间折扣效应<br>
-人类大脑对即时奖励的权重远高于远期奖励。打游戏的多巴胺反馈是即时的，而论文的成就感是延迟的。这不是意志力问题，而是神经机制问题。<br>
-<img src="data:image/webp;base64,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" alt="tu"></li>
-<li>飞轮效应的科学性<br>
-剧本推荐的“只做5分钟”方法，在认知行为疗法中被称为结构化拖延或微启动策略。原理是：行动门槛一旦降低到“只做5分钟”，焦虑感就会大幅下降；而一旦开始，大脑的任务切换成本已被支付，继续下去的阻力骤减。这与“飞轮效应”的比喻一致：最费力的是推动静止飞轮的第一圈。<br>
-<img src="https://ts1.tc.mm.bing.net/th/id/R-C.d1aef20b60837436972a0569ffc69ef7?rik=DmIsA20D8peqJA&amp;riu=http%3a%2f%2frzsy.sqmc.edu.cn%2f_upload%2farticle%2fimages%2f27%2f44%2f1316a25042af886a2c44a633a4a4%2f9ab628e0-93be-4e2a-b106-9e4e6020c05e_d.jpeg&amp;ehk=DlKW%2bQUlSzn%2fr7n55%2fEQoCMhyp5PhE364%2f9UfrwV%2bUA%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="TU"></li>
-</ol>
+    body {
+      background: #faf9f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', 'Noto Sans', sans-serif;
+      line-height: 1.7;
+      color: #1e1e2a;
+      padding: 2rem 1rem;
+    }
 
+    .paper {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+      background: #fffcf8;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.02);
+      border-radius: 32px;
+      padding: 2.5rem 2rem;
+      border: 1px solid #f0e7de;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      color: #1f2e3a;
+      border-left: 8px solid #f6ae2d;
+      padding-left: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: #2c3e4e;
+      border-bottom: 3px dashed #ecd9c6;
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-top: 1.8rem;
+      margin-bottom: 0.75rem;
+      color: #3a4e5e;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      font-size: 1.06rem;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      font-weight: 430;
+      background: #f3efe9;
+      padding: 1.2rem 1.8rem;
+      border-radius: 28px;
+      margin: 1.5rem 0 2rem 0;
+      color: #1e2b36;
+    }
+
+    ul, ol {
+      margin: 0.8rem 0 1.5rem 1.8rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    li strong {
+      color: #bc6c25;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .insight-card {
+      background: #fefbf8;
+      border-radius: 24px;
+      padding: 1.6rem 2rem;
+      border: 1px solid #e7dbd0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      transition: all 0.15s;
+    }
+
+    .insight-card:hover {
+      border-color: #f6ae2d80;
+      box-shadow: 0 8px 18px rgba(246, 174, 45, 0.06);
+    }
+
+    .insight-card h3 {
+      margin-top: 0.2rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .img-wrapper {
+      margin: 1.4rem 0 0.6rem;
+      text-align: center;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f3ede7;
+      padding: 0.8rem;
+    }
+
+    .img-wrapper img {
+      max-width: 100%;
+      max-height: 240px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .img-wrapper img:hover {
+      transform: scale(1.01);
+    }
+
+    .quote {
+      font-style: italic;
+      padding: 0.8rem 1.6rem;
+      background: #eae3db40;
+      border-radius: 18px;
+      color: #2e404e;
+      border-left: 5px solid #bc6c25;
+      margin: 1.6rem 0;
+    }
+
+    .method-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem 1.5rem;
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .method-list li {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%23f6ae2d" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') left center no-repeat;
+      padding-left: 2rem;
+      background-size: 1.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .video-placeholder {
+      background: #e8ddd2;
+      border-radius: 28px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      margin: 2.5rem 0 1rem;
+      border: 2px dashed #c4aa97;
+      color: #3f4e5c;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .video-placeholder:hover {
+      background: #dfd2c6;
+    }
+
+    .video-icon {
+      font-size: 3.8rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.7;
+    }
+
+    .footnote {
+      margin-top: 2.8rem;
+      text-align: right;
+      font-size: 0.9rem;
+      color: #7b6e63;
+      border-top: 1px solid #e3d6cb;
+      padding-top: 1.8rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f6ae2d20;
+      color: #935e1f;
+      font-weight: 500;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin-right: 0.6rem;
+      border: 1px solid #f6ae2d40;
+    }
+
+    .emoji-bullet {
+      margin-right: 8px;
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 600px) {
+      .paper {
+        padding: 1.8rem 1.2rem;
+      }
+      h1 {
+        font-size: 2rem;
+        padding-left: 1rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .insight-card {
+        padding: 1.2rem 1.4rem;
+      }
+    }
+
+    /* 罕见词提示样式（低调优雅） */
+    .rare-word {
+      font-weight: 480;
+      color: #6e4b2e;
+      border-bottom: 1px dotted #b98f6e;
+      cursor: help;
+    }
+  </style>
+</head>
+<body>
+<div class="paper">
+  <h1>🐢 第三组心理剧 · 拖延症飞轮</h1>
+  <div class="lead">
+    “再等一会儿” —— 拖延不是懒惰，是情绪在呼救。<br>
+    当完美主义撞上时间折扣，飞轮的第一圈最费力。现在，开始转动。
+  </div>
+
+  <!-- 剧本简介 -->
+  <h2>📜 剧本简介</h2>
+  <p><span class="tag">小明同学</span> <span class="tag">逃避作业</span> <span class="tag">最终觉醒</span></p>
+  <p>小明同学不想完成作业，喜欢把大把时间投入到娱乐中，所以在写作业的过程中出现了很多拖延的行为。作业等到最后一天写，游戏一直在玩，输了要一雪前耻，赢了要乘胜追击；写作业没头绪就开始做其他的事情，完全没有投入其中；在经历了惨重的教训后，他终于决定改变对必须要完成的事情的态度，不再拖沓。</p>
+
+  <!-- 剧本分析 + 核心发现 -->
+  <h2>🔍 剧本分析 · 核心发现</h2>
+  <p>剧本触及了拖延症研究的几个核心发现，将抽象的心理学机制转化为宿舍日常的精确隐喻。</p>
+
+  <div class="card-grid">
+    <!-- 1. 拖延 ≠ 懒惰 -->
+    <div class="insight-card">
+      <h3>① 拖延 ≠ 懒惰</h3>
+      <p>这是最关键的认知纠偏。心理学研究表明，拖延的本质是<strong>情绪调节失败</strong>——我们拖延不是因为不想做，而是因为做这件事会触发焦虑、恐惧、自我怀疑等负面情绪，拖延是逃避这些情绪的短期策略。剧本通过A“一坐到书桌前就难受”的台词，精准传达了这一点。</p>
+      <div class="img-wrapper">
+        <img src="1.webp" alt="拖延情绪图示" loading="lazy">
       </div>
-      
-      
-    
-    
-    
-    
-    
-    
+      <p style="font-size:0.95rem; color:#5d6c7a;">📌 情绪回避是拖延的第一推手，而非意志薄弱。</p>
+    </div>
+
+    <!-- 2. 完美主义与拖延的共生关系 -->
+    <div class="insight-card">
+      <h3>② 完美主义与拖延的共生</h3>
+      <p>“等状态好了一次性搞定”是拖延者最常见的自我欺骗。研究显示，完美主义者的拖延率显著更高，因为完美主义设定了一个不可能的标准，而“不开始”是唯一不会失败的方式。</p>
+      <div class="img-wrapper">
+        <img src="2.png" alt="完美主义拖延关联图" loading="lazy">
+      </div>
+      <p style="font-size:0.95rem; color:#5d6c7a;">🎯 不开始即零失败 —— 完美主义的防御性回避。</p>
+    </div>
+
+    <!-- 3. 时间折扣效应 -->
+    <div class="insight-card">
+      <h3>③ 时间折扣效应</h3>
+      <p>人类大脑对即时奖励的权重远高于远期奖励。打游戏的多巴胺反馈是即时的，而论文的成就感是延迟的。这不是意志力问题，而是神经机制问题。</p>
+      <div class="img-wrapper">
+        <img src="3.png" alt="时间折扣效应图解" loading="lazy">
+      </div>
+      <p style="font-size:0.95rem; color:#5d6c7a;">⚡ 即时满足与延迟奖赏的神经拔河。</p>
+    </div>
+
+    <!-- 4. 飞轮效应的科学性 -->
+    <div class="insight-card">
+      <h3>④ 飞轮效应的科学性</h3>
+      <p>剧本推荐的“只做5分钟”方法，在认知行为疗法中被称为<strong>结构化拖延</strong>或<strong>微启动策略</strong>。原理是：行动门槛一旦降低到“只做5分钟”，焦虑感就会大幅下降；而一旦开始，大脑的任务切换成本已被支付，继续下去的阻力骤减。这与“飞轮效应”的比喻一致：最费力的是推动静止飞轮的第一圈。</p>
+      <div class="img-wrapper">
+        <img src="4.png" alt="飞轮效应示意图" loading="lazy">
+      </div>
+      <p style="font-size:0.95rem; color:#5d6c7a;">🌀 飞轮第一圈 —— 只需欺骗自己“只做五分钟”。</p>
+    </div>
+  </div>
+
+  <!-- 剧本总结 (深度整合) -->
+  <h2>🧠 拖延症实质 · 破解循环</h2>
+  <p>拖延症实质上是一种习惯性地推迟、延迟或推延完成任务的行为模式。即使任务紧急或重要，为了逃避任务带来的负面情绪（如焦虑、无聊或不安等），拖延者便会找各种理由避免立即行动。<br>
+  它会影响身心健康，影响工作与学业表现，还会影响长期目标实现，最后严重到形成恶性循环，变成长期的习惯，难以打破。</p>
   
-    </body></html>
+  <div class="quote">
+    💡 有时候，我们拖延并不是因为懒，而是害怕任务带来的焦虑！每次打开Word，看到空白页，就觉得头皮发麻——这不是拖延，是情绪在作祟！<br>
+    换个角度看待任务，让它变得没那么可怕。
+  </div>
+
+  <h3>🎯 试试这些方法 · 立刻破冰</h3>
+  <ul class="method-list">
+    <li><strong>番茄工作法</strong>：专注25分钟，休息5分钟，提高耐力。</li>
+    <li><strong>减少干扰</strong>：上课/工作时把手机丢远点，别让通知诱惑你！</li>
+    <li><strong>给自己设定规则</strong>：比如“先完成任务，再看剧”。</li>
+    <li><strong>改善情绪调节</strong>：别让“负面情绪”拉你下水！</li>
+  </ul>
+
+  <h3>✨ 举个栗子 · 焦虑换框</h3>
+  <ul style="list-style: none; margin-left: 0;">
+    <li style="margin-bottom: 0.8rem;">❌ 以前：“完蛋，这论文太难了，我根本做不来！”（焦虑值+100）</li>
+    <li style="margin-bottom: 0.8rem;">✅ 现在：“这只是一步一步完成的任务，先搞定第一部分。”（焦虑值-50）</li>
+  </ul>
+  <p><strong>情绪稳定的人，拖延症会少很多！</strong><br>
+  还可以提前想象自己完成任务的感觉，让奖励感变得更具体，更有吸引力，这样拖延的可能性就会降低。</p>
+
+  <!-- 剧本播放视频区域 -->
+  <h2>🎬 剧本播放</h2>
+  <p style="margin-bottom: 0.5rem;">最后，让我们欣赏一下剧本的播放视频吧！</p>
+  
+  <div class="video-placeholder">
+    <div class="video-icon">🎥▶️</div>
+    <div style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem;">心理剧 · 拖延症实录</div>
+    <div style="color: #5a4a3e;">（视频播放区域 · 请替换为实际嵌入代码）</div>
+    <div style="margin-top: 1.2rem; font-size: 0.9rem; opacity: 0.8;">飞轮效应 · 立刻开始就是破局</div>
+  </div>
+
+  <!-- 额外强调“罕见词”已在语义层体现（不需要额外标出但符合用户之前的要求精神，此处为了低调展现保留一个可选的装饰）-->
+  <div style="margin-top: 2rem; font-size: 0.95rem; background: #f6f1ec; border-radius: 20px; padding: 1.2rem 1.8rem;">
+    <p style="margin-bottom: 0.3rem; display: flex; gap: 12px; align-items: flex-start;">
+      <span style="font-size: 1.5rem;">📎</span> 
+      <span><strong>认知锚点：</strong> 拖延并非懒惰的同义词，而是情绪调节系统的<span class="rare-word" title="形容极其微小而顽固的阻碍">蕞尔</span>裂隙。完美主义构筑<span class="rare-word" title="险峻的高标准">巉</span>岩，飞轮效应揭示<span class="rare-word" title="永恒存在的惯性">恒</span>常的启动代价。唯有<span class="rare-word" title="勤勉不懈">矻矻</span>微动，才能击穿拖延的防御。</span>
+    </p>
+    <p style="margin: 0.8rem 0 0 2.3rem; font-style: italic; color: #4b5e6b;">—— 心理防御机制需要被看见，而非被指责。</p>
+  </div>
+
+  <!-- 脚注/小组信息 -->
+  <div class="footnote">
+    ⏳ 第三组 · 拖延症心理剧 ｜ 剧本分析 ｜ 飞轮效应 · 立刻开始<br>
+    <span style="letter-spacing: 1px;">#procrastination #psychology #wheel</span>
+  </div>
+</div>
+
+<!-- 图片说明：引用的图片1.webp, 2.png, 3.png, 4.png 需置于同级目录下，或替换为有效URL -->
+</body>
+</html>
